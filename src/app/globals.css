@@ -16,7 +16,11 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background-color: pink;
+.navbar a {
+  float: left;
+  margin-right: 100px;
+}
+
+.navbar a:hover {
+  color: red;
 }
