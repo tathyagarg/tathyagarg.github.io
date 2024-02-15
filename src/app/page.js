@@ -1,9 +1,9 @@
 export default function Home() {
   return (
     <div className='navbar'>
-    <a>ABCDEF</a>
-    <a>GHIJKL</a>
-    <a>MNOPQR</a>
+      <a>Home</a>
+      <a>Blog</a>
+      <a>Portfolio</a>
     </div>
   );
 }
