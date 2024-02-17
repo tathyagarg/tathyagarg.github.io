@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
 
@@ -48,28 +48,26 @@ const Section = styled.section`
         bottom: 0;
         left: 0;
         right: 0;
-        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(145, 255, 157, 1) 100%);
+        background: linear-gradient(to bottom, rgba(145, 255, 157, 0) 0%,rgba(145, 255, 157, 1) 100%);
         height: 10%;
     }
 `
 // Transition into #91ff9d
 
 
-class AboutMeSection extends Component {
-    render() {
-        return (
-            <Section>
-                <IntroductionLink to="/aboutme">
-                    Hi, I'm Tathya
-                </IntroductionLink>
-                <p style={{display: "block", marginTop: "0px"}}>I like coding, turtles and turtles</p>
-                <div style={{position: "absolute", bottom: "10vh"}}>
-                    <SocialLink href="https://www.instagram.com/tathyagarg">Instagram</SocialLink>
-                    <SocialLink href="https://www.github.com/tathyagarg">GitHub</SocialLink>
-                </div>
-            </Section>
-        )
-    };
+function AboutMeSection() {
+    return (
+        <Section>
+            <IntroductionLink to="/aboutme">
+                Hi, I'm Tathya
+            </IntroductionLink>
+            <p style={{display: "block", marginTop: "0px"}}>I like coding, turtles and turtles</p>
+            <div style={{position: "absolute", bottom: "10vh"}}>
+                <SocialLink href="https://www.instagram.com/tathyagarg">Instagram</SocialLink>
+                <SocialLink href="https://www.github.com/tathyagarg">GitHub</SocialLink>
+            </div>
+        </Section>
+    )
 }
 
 export default AboutMeSection
