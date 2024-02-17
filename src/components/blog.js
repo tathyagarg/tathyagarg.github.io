@@ -32,11 +32,12 @@ const Blogs = styled.div`
 const BlogViewContainer = styled.div`
     height: 100%;
     width: 100%;
-    border: red solid 1px; 
-    display: block; 
+    display: block;
+    border: solid 1px transparent;
     border-radius: 0.5em;
     transition-duration: 500ms;
     background-color: ${props=>props.bg};
+    color: black;
 
     &:hover {
         transform: rotate(${props=>props.rotation}deg);
@@ -46,7 +47,17 @@ const BlogViewContainer = styled.div`
 
 const tagColorMap = {
     "beanj": ["rgba(200, 200, 100, 0.8)", "rgba(100, 200, 100, 1)"],
-    "Turtles": ["#6ACDCB", "rgba(126, 209, 194, 0.7)"]
+    "Turtles": ["#6ACDCB", "rgba(126, 209, 194, 0.7)"],
+    "Ice-Cream": ["#765742", "#C6A788"]
+}
+
+function timeConvert(UNIX) {
+    const a = new Date(UNIX * 1000);
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const year = a.getFullYear();
+    const month = months[a.getMonth()];
+    const date = a.getDate();
+    return month + " " + date + ", " + year;
 }
 
 function BlogView({contents}) {
@@ -67,14 +78,14 @@ function BlogView({contents}) {
                     <p style={{margin: "10px"}}>{tag}</p>
                 </div>
                 <h1>{head}</h1>
-                <p>{date}</p>
+                <p>{timeConvert(date)}</p>
             </div>
         </BlogViewContainer>
     )
 }
 
 function BlogSection() {
-    const [content1, content2, content3, content4, content5, content6] = fetch_contents();
+    const all_contents = fetch_contents();
 
     return (
         <section style={{height: "110vh"}}>
@@ -82,13 +93,11 @@ function BlogSection() {
             <MainDiv>
                 <Header>Blog</Header>
                 <Blogs>
-                    {/* These BlogViews will be automated to get their contents from a funciton */}
-                    <BlogView contents={content1}/>
-                    <BlogView contents={content2}/>
-                    <BlogView contents={content3}/>
-                    <BlogView contents={content4}/>
-                    <BlogView contents={content5}/>
-                    <BlogView contents={content6}/>
+                    {all_contents.map( (content) => {
+                        return <Link to={content[3]} style={{textDecoration: "none"}}>
+                            <BlogView contents={content}/>
+                        </Link>
+                    } )}
                 </Blogs>
             </MainDiv>
         </section>
@@ -104,23 +113,13 @@ function blog_format(items) {
 }
 
 function fetch_contents() {
-    const new_data = Object.keys(data).sort().reduce(
-        (obj, key) => {
-            obj[key] = data[key];
-            return obj;
-        },
-        {}
-    )
-    const items = [];
-    for (let content in new_data) {
-        if (items.length === 6) {break}
-        for (let entry of new_data[content]) {
-            items.push(blog_format(entry));
-            if (items.length === 6) {break}
-        }
+    let items = [];
+    for (let blog_post of data) {
+        items.push(blog_format(blog_post));
     }
+    items.sort(function(a, b){return b[1]-a[1]})
 
-    return items;
+    return items.slice(0, 6);
 }
 
 export default BlogSection

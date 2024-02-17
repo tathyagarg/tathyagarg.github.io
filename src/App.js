@@ -12,10 +12,8 @@ import data from "./blog_contents.json"
 
 function get_all_components() {
   const items = [];
-  for (let component in data) {
-      for (let post of data[component]) {
-        items.push(post);
-      }
+  for (let component of data) {
+    items.push(component)
   }
   return items;
 }
