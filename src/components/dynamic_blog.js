@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import timeConvert from "./timeConvert";
 import tagColorMap from "../constants";
 import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 
@@ -21,6 +20,7 @@ class DynamicBlog extends Component {
     }
 
     componentDidMount() {
+        // make this line accept a dynamic file, also make it work
         const filePath = `./turtles-1234567890.md`;
         fetch(filePath)
           .then(response => {
@@ -41,6 +41,7 @@ class DynamicBlog extends Component {
             <div style={{width: "99%", height: "100%", backgroundColor: tagColorMap[tag][1], padding: "1% 0.5%", margin: "0 auto"}}>
                 <BlogPage>
                     <div style={{padding: "1em 2em 1em 2em"}}>
+                        {/* Add the markdown here */}
                     </div>
                 </BlogPage>
             </div>

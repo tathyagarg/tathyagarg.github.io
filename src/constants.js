@@ -7,6 +7,4 @@ const tagColorMap = {
     "Cars": ["#DA3030", "rgba(255, 51, 51, 0.8)"]
 }
 
-const num = 1; // Placeholder
-
 export default tagColorMap;
