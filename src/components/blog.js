@@ -3,6 +3,8 @@ import styled from "styled-components";
 import {Link} from "react-router-dom";
 import Waves from "../waves-1.svg";
 import data from "../blog_contents.json";
+import tagColorMap from "../constants"
+import timeConvert from "./timeConvert";
 
 const MainDiv = styled.div`
     height: 100vh;
@@ -45,24 +47,6 @@ const BlogViewContainer = styled.div`
     }
 `
 
-const tagColorMap = {
-    "Turtles": ["#2E8A6E", "rgba(102, 204, 102, 0.8)"],
-    "Aquatic Animals": ["#35638B", "rgba(72, 157, 201, 0.8)"],
-    "Birds": ["#D5C198", "rgba(237, 214, 163, 0.8)"],
-    "History": ["#DBADBF", "rgba(251, 174, 210, 0.8)"],
-    "Computer Science": ["#78C850", "rgba(120, 200, 80, 0.8)"],
-    "Cars": ["#DA3030", "rgba(255, 51, 51, 0.8)"]
-}
-
-function timeConvert(UNIX) {
-    const a = new Date(UNIX * 1000);
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    const year = a.getFullYear();
-    const month = months[a.getMonth()];
-    const date = a.getDate();
-    return month + " " + date + ", " + year;
-}
-
 function BlogView({contents}) {
     const [head, date, tag] = contents;
     const [rotation, setRotation] = useState(0);
@@ -89,6 +73,7 @@ function BlogView({contents}) {
 
 function BlogSection() {
     const all_contents = fetch_contents();
+    console.log(all_contents);
 
     return (
         <section style={{height: "110vh"}}>
@@ -97,7 +82,7 @@ function BlogSection() {
                 <Header>Blog</Header>
                 <Blogs>
                     {all_contents.map( (content) => {
-                        return <Link to={content[3]} style={{textDecoration: "none"}}>
+                        return <Link to={"/"+content[0]+"-"+content[1]} style={{textDecoration: "none"}}>
                             <BlogView contents={content}/>
                         </Link>
                     } )}

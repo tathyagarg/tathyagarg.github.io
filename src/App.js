@@ -28,8 +28,8 @@ class App extends Component {
           <Route exact path="/aboutme" element={<AboutMe/>}/>
           {
             get_all_components().map( (post, index) => {
-              return <Route exact key={index} path={post["path"]} element={
-                <DynamicBlog title={post["title"]} contents={post["contents"]||"ABCDEF"} tags={post["tag"]} date={post["date"]}/>
+              return <Route exact key={index} path={"/"+post["title"]+"-"+post["date"]} element={
+                <DynamicBlog title={post["title"]} tag={post["tag"]} date={post["date"]}/>
               }/>
             })
           }

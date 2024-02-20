@@ -1,38 +1,25 @@
-[
-    {
-        "title": "Turtles",
-        "date": 1708184320,
-        "tag": "Turtles",
-        "path": "/why-turtles-are-the-best",
-        "content": "qeschunmark"
-    },{
-        "title": "Turtles2",
-        "date": 1234567890,
-        "tag": "Aquatic Animals",
-        "path": "/why-turtles-are-the-best2",
-        "content": "qeschunmark"
-    },{
-        "title": "Turtles",
-        "date": 1234567890,
-        "tag": "Birds",
-        "path": "/why-turtles-are-the-best3",
-        "content": "qeschunmark"
-    },{
-        "title": "Turtles",
-        "date": 1234567890,
-        "tag": "History",
-        "path": "/why-turtles-are-the-best4",
-        "content": "qeschunmark"
-    },{
-        "title": "Turtles",
-        "date": 1234567890,
-        "tag": "Computer Science",
-        "path": "/why-turtles-are-the-best5",
-        "content": "qeschunmark"
-    },{
-        "title": "Turtles",
-        "date": 1234567890,
-        "tag": "Cars",
-        "path": "/why-turtles-are-the-best6",
-        "content": "qeschunmark"
+[{
+    "title": "Turtles",
+    "date": 1234567890,
+    "tag": "Turtles"
+},{
+    "title": "Fish",
+    "date": 1234567890,
+    "tag": "Aquatic Animals"
+},{
+    "title": "Bird",
+    "date": 1234567890,
+    "tag": "Birds"
+},{
+    "title": "History",
+    "date": 1234567890,
+    "tag": "History"
+},{
+    "title": "Computer Science",
+    "date": 1234567890,
+    "tag": "Computer Science"
+},{
+    "title": "Cars",
+    "date": 1234567890,
+    "tag": "Cars"
 }]
