@@ -1,7 +1,11 @@
 [{
     "title": "Turtles",
     "date": 1234567890,
-    "tag": "Turtles"
+    "tag": "Turtles",
+    "contents": [
+        "#hello",
+        "##hi!"
+    ]
 },{
     "title": "Fish",
     "date": 1234567890,

@@ -73,7 +73,6 @@ function BlogView({contents}) {
 
 function BlogSection() {
     const all_contents = fetch_contents();
-    console.log(all_contents);
 
     return (
         <section style={{height: "110vh"}}>
