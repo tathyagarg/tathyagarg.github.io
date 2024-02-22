@@ -4,12 +4,18 @@
     "tag": "Turtles",
     "contents": [
         "#hello",
-        "##hi!"
+        "##hi!",
+        "!img<https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png>",
+        "!link<Ice cream,https://www.wikipedia.org>",
+        "!code<python,#Hi!\ndef function():\n\tprint(\"Hi!\")>"
     ]
 },{
     "title": "Fish",
     "date": 1234567890,
-    "tag": "Aquatic Animals"
+    "tag": "Aquatic Animals",
+    "contents": [
+        "AHHAUHHA"
+    ]
 },{
     "title": "Bird",
     "date": 1234567890,
@@ -25,5 +31,5 @@
 },{
     "title": "Cars",
     "date": 1234567890,
-    "tag": "Cars"
+    "tag": "Military Vehicles"
 }]
