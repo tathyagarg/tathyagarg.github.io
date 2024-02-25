@@ -35,7 +35,7 @@ const BlogViewContainer = styled.div`
     height: 100%;
     width: 100%;
     display: block;
-    border: solid 1px transparent;
+    border: solid 0.15em ${props=>props.bord};
     border-radius: 0.5em;
     transition-duration: 500ms;
     background-color: ${props=>props.bg};
@@ -55,11 +55,12 @@ function BlogView({contents}) {
         const min = 5;
         const max = 10;
         const randomRotation = (Math.floor(Math.random() * (max-min+1)) + min) * (Math.random() >= 0.5 ? 1 : -1);
+        console.log(rotation);
         setRotation(randomRotation);
     }
 
     return (
-        <BlogViewContainer rotation={rotation} onMouseOver={handleMouseOver} bg={tagColorMap[tag][1]}>
+        <BlogViewContainer rotation={rotation} onMouseOver={handleMouseOver} bg={tagColorMap[tag][1]} bord={tagColorMap[tag][0]}>
             <div style={{margin: "2rem"}}>
                 <div style={{backgroundColor: tagColorMap[tag][0], display: "inline-block", height: "fit-content", borderRadius: "1em"}}>
                     <p style={{margin: "10px"}}>{tag}</p>
@@ -75,7 +76,7 @@ function BlogSection() {
     const all_contents = fetch_contents();
 
     return (
-        <section style={{height: "110vh"}}>
+        <section style={{height: "100vh"}}>
             <img src={Waves} alt="Waves" style={{marginTop: "0", width: "100%", position: "absolute"}}></img>
             <MainDiv>
                 <Header>Blog</Header>
