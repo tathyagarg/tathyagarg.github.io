@@ -5,7 +5,6 @@ import {
   Route
 } from "react-router-dom";
 import Home from "./pages";
-import Portfolio from "./pages/portfolio";
 import AboutMe from "./pages/aboutme";
 import DynamicBlog from "./components/dynamic_blog";
 import data from "./blog_contents.json"
@@ -24,7 +23,6 @@ class App extends Component {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home/>}/>
-          <Route exact path="/portfolio" element={<Portfolio/>}/>
           <Route exact path="/aboutme" element={<AboutMe/>}/>
           {
             get_all_components().map( (post, index) => {

@@ -52,7 +52,6 @@ const Section = styled.section`
         height: 10%;
     }
 `
-// Transition into #91ff9d
 
 
 function AboutMeSection() {

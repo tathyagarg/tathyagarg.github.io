@@ -7,7 +7,8 @@
         "##hi!",
         "!img<https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png>",
         "!link<Ice cream,https://www.wikipedia.org>",
-        "!code<python,#Hi!\ndef function():\n\tprint(\"Hi!\")>"
+        "!code<python,#Hi!\ndef function():\n\tprint(\"Hi!\")>",
+        "ice-cream"
     ]
 },{
     "title": "Machli jal ki rani hai",
