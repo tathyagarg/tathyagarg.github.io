@@ -55,7 +55,6 @@ function BlogView({contents}) {
         const min = 5;
         const max = 10;
         const randomRotation = (Math.floor(Math.random() * (max-min+1)) + min) * (Math.random() >= 0.5 ? 1 : -1);
-        console.log(rotation);
         setRotation(randomRotation);
     }
 
