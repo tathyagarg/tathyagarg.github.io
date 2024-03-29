@@ -35,14 +35,19 @@ const Card = styled.div`
     align-items: center;
 `
 
-const parent = {
-    backgroundColor: "#91ff9d",
-    height: "100vh"
-}
+const Parent = styled.div`
+    background-color: #91ff9d;
+    height: 100vh;
+    background-image:
+        linear-gradient(to right, rgba(100, 255, 170, 10) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(100, 255, 170, 10) 1px, transparent 1px);
+    background-size: 2.5rem 2.5rem;
+    background-position: center center;
+    overflow-y: hidden;
+`
 
 const aboutme = {
     padding: "6.25%",
-    backgroundColor: "#91ff9d",
     display: "grid",
     height: "69vh",
     columnGap: "3em",
@@ -86,38 +91,48 @@ const fascinations = {
 
 const hobbies_card = {
     border: "2px red solid",
-    backgroundColor: "pink"
+    backgroundColor: "#ffafaf"
+}
+
+const interests_card = {
+    border: "2px blue solid",
+    backgroundColor: "#afafff"
+}
+
+const fascinations_card = {
+    border: "2px green solid",
+    backgroundColor: "#afffaf"
 }
 
 const AboutMe = () => {
-    return <div style={parent}>
+    return <Parent>
         <div>
             <BackLink to={"/"}>
                 &lt;- Back
             </BackLink>
-            <h1 style={{textAlign: "center", margin: "0", fontWeight: "400"}}>About Me</h1>
+            <h1 style={{textAlign: "center", margin: "0", fontWeight: "400", fontSize: "3em"}}>About Me</h1>
         </div>
         <div style={aboutme}>
             <div style={hobbies}>
                 <BlockHeader>Hobbies</BlockHeader>
-                <Card style={hobbies_card}>Suh</Card>
-                <Card style={hobbies_card}>Suh</Card>
-                <Card style={hobbies_card}>Suh</Card>
+                <Card style={hobbies_card}>Solving Rubik's Cubes</Card>
+                <Card style={hobbies_card}>Collecting Pokemon Cards</Card>
+                <Card style={hobbies_card}>Learning German</Card>
             </div>
             <div style={interests}>
                 <BlockHeader>Interests</BlockHeader>
-                <Card>Suh</Card>
-                <Card>Suh</Card>
-                <Card>Suh</Card>
+                <Card style={interests_card}>Computer Science</Card>
+                <Card style={interests_card}>Artificial Intelligence</Card>
+                <Card style={interests_card}>Research</Card>
             </div>
             <div style={fascinations}>
                 <BlockHeader>Fascinations</BlockHeader>
-                <Card>Suh</Card>
-                <Card>Suh</Card>
-                <Card>Suh</Card>
+                <Card style={fascinations_card}>Turtles</Card>
+                <Card style={fascinations_card}>Cars</Card>
+                <Card style={fascinations_card}>Birds</Card>
             </div>
         </div>
-    </div>;
+    </Parent>;
 }
 
 export default AboutMe;

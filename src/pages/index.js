@@ -4,7 +4,7 @@ import BlogSection from "../components/blog.js";
 
 const Home = () => {
     return (
-        <div className="page">
+        <div>
             <AboutMeSection/>
             <BlogSection/>
         </div>
