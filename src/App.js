@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Home from "./pages";
 import AboutMe from "./pages/aboutme";
+import BlogSection from "./pages/blog_page";
 import DynamicBlog from "./components/dynamic_blog";
 import data from "./blog_contents.json"
 
@@ -24,6 +25,7 @@ class App extends Component {
         <Routes>
           <Route exact path="/" element={<Home/>}/>
           <Route exact path="/aboutme" element={<AboutMe/>}/>
+          <Route exact path="/blog" element={<BlogSection/>}/>
           {
             get_all_components().map( (post, index) => {
               return <Route exact key={index} path={"/"+post["title"]+"-"+post["date"]} element={

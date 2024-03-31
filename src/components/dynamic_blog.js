@@ -18,15 +18,15 @@ const BlogPage = styled.div`
 function get_correct_component(item, i) {
     if (/^#(?!#)/.test(item)) {return <h1 key={i}>{item.slice(1)}</h1>}
     if (/^##(?!#)/.test(item)) {return <h2 key={i}>{item.slice(2)}</h2>}
-    const match = /!img<([^>]+)>/.exec(item)
-    if (match) {return <img src={match[1]} width="100%"></img>}
+    const match1 = /!img<([^>]+)>/.exec(item)
+    if (match1) {return <img src={match1[1]} width="100%"></img>}
 
     const match2 = /!link<([^>]+?),([^>]+)>/.exec(item)
     if (match2) { return <a href={match2[2]}>{match2[1]}</a> }
 
-    const match3 = /!code<([^>]+),([^>]+)>/.exec(item)
-    if (match3) { 
-        return ( 
+    const match3 = /!code<([^,]+),([^]+)>/.exec(item)
+    if (match3) {
+        return (
             <div style={{marginTop: "2em"}}>
                 <pre style={{margin: 0}}>
                     <PrismCode className={`language-${match3[1]}`}>
@@ -37,7 +37,11 @@ function get_correct_component(item, i) {
         )
     }
 
-    return <p key={i}>{item}</p>
+    if (item === "<empty>") {
+        return <br/>
+    }
+
+    return <p style={{lineHeight: "1.5em", fontFamily: "'Times New Roman', Times, serif"}} key={i}>{item}</p>
 }
 
 class Formatted extends Component {

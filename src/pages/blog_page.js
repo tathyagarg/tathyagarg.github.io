@@ -1,31 +1,22 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
-import Waves from "../waves-1.svg";
 import data from "../blog_contents.json";
 import tagColorMap from "../constants"
-import timeConvert from "./timeConvert";
+import timeConvert from "../components/timeConvert";
 
 const MainDiv = styled.div`
-    height: 100vh;
     background-color: #ffffff;
     display: flex;
     justify-content: center;
+    margin-bottom: 50px;
 `
 
-const Header = styled(Link)`
+const Header = styled.h1`
     font-size: 75px;
     font-weight: 200;
-    color: black;
-    text-decoration: none;
     margin-top: 1.5em;
     position: absolute;
-    transition-duration: 500ms;
-
-    &:hover {
-        transform: rotate(10deg);
-        transition-duration: 500ms;
-    }
 `
 
 const Blogs = styled.div`
@@ -40,7 +31,7 @@ const Blogs = styled.div`
 `
 
 const BlogViewContainer = styled.div`
-    height: 100%;
+    height: 30vh;
     width: 100%;
     display: block;
     border: solid 0.15em ${props=>props.bord};
@@ -83,19 +74,16 @@ function BlogSection() {
     const all_contents = fetch_contents();
 
     return (
-        <section style={{height: "100vh"}}>
-            <img src={Waves} alt="Waves" style={{marginTop: "0", width: "100%", position: "absolute"}}></img>
-            <MainDiv>
-                <Header to="/blog">Blog</Header>
-                <Blogs>
-                    {all_contents.map( (content) => {
-                        return <Link to={"/"+content[0]+"-"+content[1]} style={{textDecoration: "none"}}>
-                            <BlogView contents={content}/>
-                        </Link>
-                    } )}
-                </Blogs>
-            </MainDiv>
-        </section>
+        <MainDiv>
+            <Header>Blog</Header>
+            <Blogs>
+                {all_contents.map( (content) => {
+                    return <Link to={"/"+content[0]+"-"+content[1]} style={{textDecoration: "none"}}>
+                        <BlogView contents={content}/>
+                    </Link>
+                } )}
+            </Blogs>
+        </MainDiv>
     )
 }
 
@@ -114,7 +102,7 @@ function fetch_contents() {
     }
     items.sort(function(a, b){return b[1]-a[1]})
 
-    return items.slice(0, 6);
+    return items;
 }
 
 export default BlogSection
