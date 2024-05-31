@@ -1,16 +1,4 @@
 [{
-    "title": "Turtles",
-    "date": 1234567890,
-    "tag": "Turtles",
-    "contents": [
-        "#hello",
-        "##hi!",
-        "!img<https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png>",
-        "!link<Ice cream,https://www.wikipedia.org>",
-        "!code<python,#Hi!\ndef function():\n\tprint(\"Hi!\")>",
-        "ice-cream"
-    ]
-},{
     "title": "Math Splitting",
     "date": 1711911854,
     "tag": "Computer Science",
@@ -30,12 +18,12 @@
         "Now, for the subject of this blog post.",
         "Long calculations.",
         "Like, look at the formula I came across on bulbapedia",
-        "!img<https://wikimedia.org/api/rest_v1/media/math/render/svg/1060a70e3654dc4072b0080df660e4cd8731cb5e>",        
+        "!img<https://wikimedia.org/api/rest_v1/media/math/render/svg/1060a70e3654dc4072b0080df660e4cd8731cb5e>",
         "ITS SO MASSIVE",
         "Implementing calculations like this is difficult and unreadable. So, instead of doing something stupid like:",
         "!code<python,def calculate_stat(self, bs, iv, ev):\n\tstat = math.floor((math.floor((2 * bs + iv + math.floor(ev/4)) * self.level / 100) + 5) * get_nature_mul(self.nature, abstracts.Stat.ATTACK))\n\treturn stat>",
         "That's so unreadable. If I missed the pesky +5 in there, I wouldn't find it until forever. So, we split our calculations into steps, like a sane person. We'll make a variable for basically every bracket. So we get,",
-        "!code<python,def calculate_stat(self, nature, ev, iv, bs):\n\ta = math.floor(ev / 4)\n\tb = 2 * bs + iv + a\n\tc = math.floor(b * self.level / 100) + 5\n\td = math.floor(c * nature)\n\treturn d>",        
+        "!code<python,def calculate_stat(self, nature, ev, iv, bs):\n\ta = math.floor(ev / 4)\n\tb = 2 * bs + iv + a\n\tc = math.floor(b * self.level / 100) + 5\n\td = math.floor(c * nature)\n\treturn d>",
         "Notice the immensely increased readability? Also notice how we got ride of the get_nature_mul because we'll just call it before we call calculate_stat. If you think about it, this just like how people structure code into different files/directories, just on a smaller scale. Both play the same purpose. Theoretically, every piece of code in a massive library could lie in the same file. But it doesn't.",
         "Readability counts."
     ]
