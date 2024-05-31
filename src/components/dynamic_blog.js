@@ -33,7 +33,7 @@ function get_correct_component(item, i) {
                         {match3[2]}
                  </PrismCode>
                 </pre>
-            </div> 
+            </div>
         )
     }
 
@@ -41,7 +41,7 @@ function get_correct_component(item, i) {
         return <br/>
     }
 
-    return <p style={{lineHeight: "1.5em", fontFamily: "'Times New Roman', Times, serif"}} key={i}>{item}</p>
+    return <p style={{lineHeight: "1.5em"}} key={i}>{item}</p>
 }
 
 class Formatted extends Component {
