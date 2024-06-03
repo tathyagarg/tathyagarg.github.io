@@ -79,7 +79,7 @@ const AboutMe = () => {
                             <p>
                                 Wikibot is a chatbot that uses Natural Language Processing (NLP) to understand the focus of queries, and tries to construct sentences from data scraped from a few websites. Of course, the sentences aren't very good and often don't make much sense due to the limited data it has to go off of.
                             </p>
-                            <img src={require("../assets/wikibot-demo.png")} width="100%"></img>
+                            <img src={require("../assets/wikibot-demo.png")} height="50%"></img>
                         </Project1>
                         <div style={{float: "right", width: "50%"}}>
                             <Project2>
@@ -87,7 +87,7 @@ const AboutMe = () => {
                                 <p>
                                     This website was made primarily using React.js. The blog section of this website dynamically creates webpages from stored data. Might migrate to using an API though.
                                 </p>
-                                <img src={require("../assets/website-demo.png")} width="100%"></img>
+                                <img src={require("../assets/website-demo.png")} height="50%"></img>
                             </Project2>
                             <Project2>
                                 <ProjectLink href="https://github.com/tathyagarg/seaturtle_menu">Seaturtle Menu</ProjectLink>
