@@ -1,7 +1,0 @@
-body {
-    overflow-x: hidden;
-}
-
-li:not(:last-child) {
-    margin-bottom: 2vh;
-}
