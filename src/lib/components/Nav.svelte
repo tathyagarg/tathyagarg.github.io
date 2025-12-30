@@ -48,5 +48,4 @@
   <hr />
 
   <small class="pt-8">v26.1</small>
-  <small class="selection:bg-[#95D600]!">Powered by Monster Energy</small>
 </div>
