@@ -1,1 +1,0 @@
-import{f as r,a as t}from"../chunks/D6DX8ZRF.js";import"../chunks/kVPCwi2N.js";import{n as p}from"../chunks/NLeI49yf.js";var n=r('<div class="pt-12"><h2>1</h2> <h1>Tathya<br/>Garg</h1></div> <p>Tech connoisseur</p>',1);function h(a){var o=n();p(2),t(a,o)}export{h as component};
